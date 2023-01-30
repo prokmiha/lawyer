@@ -1,0 +1,110 @@
+{% extends './base.html' %}
+
+{% block title %}Главная страница моего блога{% endblock %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block content %}
+ <div class="d-flex justify-content-between main-part" style="background-color: #f6f0e2; ">
+    <form class="container p-5 left-side"
+          style="">
+        <h1 style="padding-top: 75px">Консультація</h1>
+        <p style="padding-top: 15px; font-size: 23px">Заповніть форму і ми зв'яжемося з вами, щоб з'ясувати деталі</p>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Пошта</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="poshta@gmail.com">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Номер телефону</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="096-000-00-00">
+        </div>
+    </form>
+    <div class="container p-5" style="min-width: 65%;">
+        <div class="row">
+            <div class="col mb-4 card-size">
+                <div class="card">
+                    <img src="first_project/templates/img/third_image.png" alt="" class="card-img-top">
+                    <div class="card-body" style="background-color: #e5bf8a">
+                        <h3 class="card-title"><b>Новина №1</b></h3>
+                        <div class="card-text mb-2">Тут має бути якийсь текст</div>
+                        <a href="" class="btn btn-primary">Читати</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4 card-size">
+                <div class="card">
+                    <img src="first_project/templates/img/third_image.png" alt="" class="card-img-top">
+                    <div class="card-body" style="background-color: #e5bf8a">
+                        <h3 class="card-title"><b>Новина №2</b></h3>
+                        <div class="card-text mb-2">І тут також має бути якийсь текст</div>
+                        <a href="" class="btn btn-primary">Читати</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4 card-size">
+                <div class="card">
+                    <img src="first_project/templates/img/third_image.png" alt="" class="card-img-top">
+                    <div class="card-body" style="background-color: #e5bf8a">
+                        <h3 class="card-title"><b>Новина №3</b></h3>
+                        <div class="card-text mb-2">І тут</div>
+                        <a href="" class="btn btn-primary">Читати</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4 card-size">
+                <div class="card">
+                    <img src="first_project/templates/img/third_image.png" alt="" class="card-img-top">
+                    <div class="card-body" style="background-color: #e5bf8a">
+                        <h3 class="card-title"><b>Новина №4</b></h3>
+                        <div class="card-text mb-2">І тут</div>
+                        <a href="" class="btn btn-primary">Читати</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4 card-size">
+                <div class="card">
+                    <img src="first_project/templates/img/third_image.png" alt="" class="card-img-top">
+                    <div class="card-body" style="background-color: #e5bf8a">
+                        <h3 class="card-title"><b>Новина №5</b></h3>
+                        <div class="card-text mb-2">І тут</div>
+                        <a href="" class="btn btn-primary">Читати</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav aria-label="Paginate me">
+            <ul class="pagination justify-content-start" style="padding-left: 300px">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Попередня</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Наступна</a>
+                </li>
+            </ul>
+        </nav>
+        <br>
+    </div>
+</div>
+{% endblock %}
+
+{% block pagination %}
+    <nav aria-label="Paginate me">
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1">Предыдущая</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">Следующая</a>
+        </li>
+      </ul>
+    </nav>
+    <br>
+{% endblock %}
