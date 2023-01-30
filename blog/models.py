@@ -1,15 +1,16 @@
-import datetime
-
 from django.db import models
-from django.db.models import *
+from django.utils import timezone
+from django.contrib.auth.models import User
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class Post(models.Model):
-    title = CharField(max_length=255)
-    description = TextField()
-    content = TextField()
-    post_on = DateTimeField(auto_now=True)
-    author = None
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    content = RichTextUploadingField()
+    image = models.ImageField(blank=True)
+    post_on = models.DateField(default=timezone.now)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
