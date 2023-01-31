@@ -1,9 +1,9 @@
 {% extends './base.html' %}
-{% block title %} <title>{{ post.title }}</title> {% endblock %}
 {% load static %}
+{% block title %}{{ post.title }}{% endblock %}
 
 {% block header %}
-    <header>{% include './block/header.html' %}</header>
+    {% include './block/header.html' %}
 {% endblock %}
 {% block content %}
 <div class="container">
