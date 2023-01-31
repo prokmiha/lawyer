@@ -1,18 +1,12 @@
-{% load static %}
-<div class="container-fluid home-slider">
-    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active" style="background-color: #343a40!important">
-                <div class="carousel-caption d-none d-md-block">
-                    <h1>
-                        {% if post.title %}
-                            {{ post.title }}
-                        {% else %}
-                            {{ title }}
-                        {% endif %}
-                    </h1>
-                </div>
-            </div>
-        </div>
+<div style="width: auto; height: 150px; background-color: #343a40">
+    <div style="text-align: center; color: aliceblue">
+        <h1>
+            {% if post.title %}
+                {{ post.title }}
+            {% else %}
+                {{ post.descriptin|truncatechars:50 }}
+            {% endif %}
+        </h1>
+    <p style="color: #ada9a9; font-size: 17px; margin-top: 30px"> Автор: {{ post.author }}</p>
     </div>
 </div>
