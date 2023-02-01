@@ -1,0 +1,51 @@
+{% extends './base.html' %}
+{% load static %}
+{% block title %}<title xmlns:data="http://www.w3.org/1999/xhtml">Реєстрація</title>{% endblock %}
+
+{% block content %}
+    <div class="text-center ">
+        {% if form.errors %}
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <div class="alert alert-danger">
+                        <strong>{{ error|escape }}</strong>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+                <div class="alert alert-danger">
+                    <strong>{{ error|escape }}</strong>
+                </div>
+            {% endfor %}
+        {% endif %}
+        <form class="form-signin container shadow-lg pb-5" method="post" action="{% url 'signup' %}"
+              style="width: 25%; margin-top: 100px; background: linear-gradient(-45deg, #d07f68, #d09f68, #d0cb68, #b3d068); border-radius: 25px">
+        {% csrf_token %}
+        <h3 class="h4 mb-3 pt-5 font-weight-bold" style="text-shadow: 8px 8px 10px #0000008c; font-style: italic;">
+            Вкажіть ім'я користувача та пароль
+        </h3>
+        <br>
+        <h4 class="pb-3">
+            Ім'я користувача
+        </h4>
+        <div class="pb-3" style="width: 75%; margin-left: 50px;">
+            {{ form.username }}
+        </div>
+        <h4 class="pb-3">
+            Пароль
+        </h4>
+        <div class="pb-3" style="width: 75%; margin-left: 50px; border-radius: 15px">
+            {{ form.password }}
+        </div>
+        <h4 class="pb-3">
+            Повторіть пароль
+        </h4>
+        <div class="pb-3" style="width: 75%; margin-left: 50px;">
+            {{ form.repeat_password }}
+        </div>
+        <div style="width: 100%;">
+            <button class="btn mt-2 btn-lg btn-primary" type="submit">Реєстрація</button>
+        </div>
+        </form>
+    </div>
+{% endblock %}
