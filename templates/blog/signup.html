@@ -4,20 +4,7 @@
 
 {% block content %}
     <div class="text-center ">
-        {% if form.errors %}
-            {% for field in form %}
-                {% for error in field.errors %}
-                    <div class="alert alert-danger">
-                        <strong>{{ error|escape }}</strong>
-                    </div>
-                {% endfor %}
-            {% endfor %}
-            {% for error in form.non_field_errors %}
-                <div class="alert alert-danger">
-                    <strong>{{ error|escape }}</strong>
-                </div>
-            {% endfor %}
-        {% endif %}
+        
         <form class="form-signin container shadow-lg pb-5" method="post" action="{% url 'signup' %}"
               style="width: 25%; margin-top: 100px; background: linear-gradient(-45deg, rgb(147,135,121), rgb(185,172,154), rgb(190,175,157), #d9c8b3); border-radius: 25px">
         {% csrf_token %}
@@ -42,7 +29,22 @@
         </h4>
         <div class="pb-3" style="width: 75%; margin-left: 50px;">
             {{ form.repeat_password }}
+            {% if form.errors %}
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <div class="alert alert-danger">
+                        <strong>{{ error|escape }}</strong>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+                <div class="alert alert-danger" style="height: 38px; margin-top: 5px; position: relative;" role="alert">
+                    <p style="margin-top: -5px;"><strong>{{ error|escape }}</strong></p>
+                </div>
+            {% endfor %}
+        {% endif %}
         </div>
+        
         <div style="width: 100%;">
             <button class="btn mt-2 btn-lg btn-primary" type="submit">Реєстрація</button>
         </div>
