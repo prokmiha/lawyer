@@ -41,8 +41,8 @@ class SignUpView(View):
             if user is None:
                 login(request, user)
                 return HttpResponseRedirect('/')
-            return render(request, 'blog/signup.html', context={
-                'form': form
-            })
+        return render(request, 'blog/signup.html', context={
+            'form': form
+        })
 
 
